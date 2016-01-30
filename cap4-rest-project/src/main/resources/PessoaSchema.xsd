@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- A JDK possui um utilitario chamado xjc que utiliza a biblioteca padrao para manipulacao de xml`s JAXB (Java Architecture for XML Binding), para realizar o parse 
+	de arquivos de esquema (.xsd) em classes Java. -->
+
+<!-- Uso: xjc -d ../java PessoaSchema.xsd -->
+<!-- O parametro -d indica a pasta onde as classes serao geradas -->
+<!-- Depois do parametro -d, o arquivo de esquema deve ser especificado -->
+
+<s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.cap4-rest-project.com.br/pessoa" xmlns="http://www.cap4-rest-project.com.br/pessoa"
+	elementFormDefault="qualified">
+
+	<s:simpleType name="CEP">
+		<s:restriction base="s:string">
+			<s:pattern value="\d{5}-\d{3}" />
+		</s:restriction>
+	</s:simpleType>
+
+	<s:complexType name="Endereco">
+		<s:sequence>
+			<s:element name="cep" type="CEP" />
+			<s:element name="logradouro" type="s:string" />
+		</s:sequence>
+	</s:complexType>
+
+	<s:complexType name="Pessoa">
+		<s:sequence>
+			<s:element name="nome" type="s:string" />
+			<s:element name="idade" type="s:int" />
+			<s:element name="enderecos" type="Endereco" maxOccurs="unbounded" minOccurs="0" />
+		</s:sequence>
+	</s:complexType>
+
+	<s:element name="pessoa" type="Pessoa" />
+</s:schema>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pessoa xmlns="http://www.cap4-rest-project.com.br/pessoa" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cap4-rest-project.com.br/pessoa PessoaSchema.xsd">
+
+	<nome>Matheus Gomes Goes</nome>
+	<idade>22</idade>
+	<enderecos>
+		<cep>04419-140</cep>
+		<logradouro>Tito Pacheco</logradouro>
+	</enderecos>
+
+</pessoa>

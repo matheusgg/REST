@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clientes</title>
+<meta charset="UTF-8" />
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="resources/js/app.js"></script>
+<script src="resources/js/json.js"></script>
+<link rel="stylesheet" type="text/css" href="resources/css/app.css" />
+</head>
+<body>
+	<fieldset>
+		<legend>Lista de Clientes</legend>
+
+		<table id="tabelaClientes">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th colspan="2">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Carregando...</td>
+				</tr>
+			</tbody>
+		</table>
+	</fieldset>
+
+	<fieldset class="hide" id="detalhes">
+		<legend>Detalhes</legend>
+		<p>
+			<label>ID: </label><span id="dtlId"></span> <br> <label>Nome: </label><span id="dtlNome"></span> <br> <span
+				id="dtlLink"></span><br>
+			<button onclick="hideForm('detalhes');return false;">Cancelar</button>
+		</p>
+	</fieldset>
+
+	<button onclick="showForm('fieldNovoCliente')">Novo Cliente</button>
+
+	<fieldset class="hide" id="fieldNovoCliente">
+		<legend>Novo Cliente</legend>
+
+		<form id="formNovoCliente" method="post">
+			<label>Nome:</label><input type="text" name="nome" size="60" />
+			<button onclick="cadastraCliente(); return false;">Cadastrar</button>
+			<button onclick="hideForm('fieldNovoCliente');return false;">Cancelar</button>
+		</form>
+	</fieldset>
+</body>
+</html>

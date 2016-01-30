@@ -1,0 +1,19 @@
+th, td {
+	text-align: center;
+}
+
+table {
+	width: 50%;
+}
+
+label {
+	font-weight: bold;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
